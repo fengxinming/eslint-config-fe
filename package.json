@@ -19,5 +19,19 @@
     "@babel/eslint-parser": "^7.11.0",
     "@babel/eslint-plugin": "^7.11.0",
     "eslint": "^6.2.0 || 7.x"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fengxinming/eslint-config-fe.git"
+  },
+  "keywords": [
+    "eslint",
+    "eslint-config",
+    "front-end",
+    "eslint-config-fe"
+  ],
+  "bugs": {
+    "url": "https://github.com/fengxinming/eslint-config-fe/issues"
+  },
+  "homepage": "https://github.com/fengxinming/eslint-config-fe#readme"
 }
