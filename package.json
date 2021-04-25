@@ -1,0 +1,23 @@
+{
+  "name": "eslint-config-fe",
+  "version": "1.0.0",
+  "description": "ESLint config for Front End.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jesse Feng <fxm0016@126.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/eslint-parser": "^7.11.0",
+    "@babel/eslint-plugin": "^7.11.0",
+    "eslint": "^7.0.0"
+  },
+  "peerDependencies": {
+    "@babel/core": "^7.13.16",
+    "@babel/eslint-parser": "^7.11.0",
+    "@babel/eslint-plugin": "^7.11.0",
+    "eslint": "^6.2.0 || 7.x"
+  }
+}
