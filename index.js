@@ -1,867 +1,14 @@
+'use strict';
+
 module.exports = {
-  parser: '@babel/eslint-parser',
-  parserOptions: {
-    sourceType: 'module',
-    ecmaFeatures: {
-      jsx: true,
-    },
-    requireConfigFile: false,
-  },
-  plugins: [
-    '@babel',
-  ],
-  env: {
-    browser: true,
-    node: true,
-    es6: true,
-  },
+  extends: require.resolve('./less'),
   rules: {
     /**
-     * 限制在非空文件末尾至少存在一行空行
+     * 警告使用了 Unicode 字节顺序标记 (BOM)
      *
-     * https://eslint.org/docs/rules/eol-last
+     * https://eslint.org/docs/rules/unicode-bom
      */
-    'eol-last': ['error', 'always'],
-
-    /**
-     * 不允许使用非字符串连接而使用模板字面量
-     *
-     * https://eslint.org/docs/rules/prefer-template
-     */
-    'prefer-template': 'error',
-
-    /**
-     * 不允许对关系运算符的左操作数使用否定操作符
-     *
-     * https://eslint.org/docs/rules/no-unsafe-negation
-     */
-    'no-unsafe-negation': 'error',
-    /**
-     * 限制2个缩进
-     *
-     * https://eslint.org/docs/rules/no-mixed-spaces-and-tabs
-     */
-    'indent': [
-      'error',
-      2,
-      {
-        SwitchCase: 1,
-      },
-    ],
-
-    /**
-     * 限制 generator 函数星号后面有空格
-     *
-     * https://eslint.org/docs/rules/generator-star-spacing
-     */
-    'generator-star-spacing': [
-      'error',
-      {
-        'before': false,
-        'after': true,
-      },
-    ],
-
-    /**
-     * 限制构造函数首字母大写
-     *
-     * https://eslint.org/docs/rules/new-cap
-     */
-    '@babel/new-cap': [
-      'error',
-      {
-        'capIsNewExceptions': [
-          'T',
-          'Vue',
-          'React',
-        ],
-      },
-    ],
-
-    /**
-     * 不允许在括号内使用空格
-     *
-     * https://eslint.org/docs/rules/array-bracket-spacing
-     */
-    'array-bracket-spacing': [
-      'error',
-      'never',
-    ],
-
-    /**
-     * 限制在花括号中使用一致的空格
-     *
-     * https://eslint.org/docs/rules/object-curly-spacing
-     */
-    '@babel/object-curly-spacing': [
-      'error',
-      'always',
-    ],
-
-    /**
-     * 限制箭头函数的参数被圆括号包围
-     *
-     * https://eslint.org/docs/rules/arrow-parens
-     */
-    'arrow-parens': [
-      'error',
-      'always',
-    ],
-
-    /**
-     * 限制使用 console.error、console.warn、console.info
-     *
-     * https://eslint.org/docs/rules/no-console
-     */
-    'no-console': ['warn', { allow: ['error', 'warn', 'info'] }],
-
-    /**
-     * 警告在条件中使用常量表达式
-     *
-     * https://eslint.org/docs/rules/no-constant-condition
-     */
-    'no-constant-condition': 'warn',
-
-    /**
-     * 限制尾部有逗号
-     *
-     * https://eslint.org/docs/rules/comma-dangle
-     */
-    'comma-dangle': [
-      'error',
-      {
-        'arrays': 'always-multiline',
-        'objects': 'always-multiline',
-        'imports': 'always-multiline',
-        'exports': 'always-multiline',
-        'functions': 'never',
-      },
-    ],
-
-    /**
-     * 不允许使用 debugger
-     *
-     * https://eslint.org/docs/rules/no-debugger
-     */
-    'no-debugger': 'error',
-
-    /**
-     * 警告在对象字面量中出现重复的键
-     *
-     * https://eslint.org/docs/rules/no-dupe-keys
-     */
-    'no-dupe-keys': 'warn',
-
-    /**
-     * 不允许正则表达式中出现空字符集
-     *
-     * https://eslint.org/docs/rules/no-empty-character-class
-     */
-    'no-empty-character-class': 'error',
-
-    /**
-     * 不允许对 catch 子句中的异常重新赋值
-     *
-     * https://eslint.org/docs/rules/no-ex-assign
-     */
-    'no-ex-assign': 'error',
-
-    /**
-     * 警告出现不必要的布尔类型转换
-     *
-     * https://eslint.org/docs/rules/no-extra-boolean-cast
-     */
-    'no-extra-boolean-cast': 'warn',
-
-    /**
-     * 警告对 function 声明重新赋值
-     *
-     * https://eslint.org/docs/rules/no-func-assign
-     */
-    'no-func-assign': 'warn',
-
-    /**
-     * 警告在嵌套的语句块中出现变量或 function 声明
-     *
-     * https://eslint.org/docs/rules/no-inner-declarations
-     */
-    'no-inner-declarations': 'warn',
-
-    /**
-     * 不允许使用无效的正则表达式在 RegExp 构造函数中
-     *
-     * https://eslint.org/docs/rules/no-invalid-regexp
-     */
-    'no-invalid-regexp': 'error',
-
-    /**
-     * 不允许全局对象被当作函数调用
-     *
-     * https://eslint.org/docs/rules/no-obj-calls
-     */
-    'no-obj-calls': 'error',
-
-    /**
-     * 不允许使用稀疏数组
-     *
-     * https://eslint.org/docs/rules/no-sparse-arrays
-     */
-    'no-sparse-arrays': 'error',
-
-    /**
-     * 不允许在 return、throw、continue 和 break 语句后出现不被执行的代码
-     *
-     * https://eslint.org/docs/rules/no-unreachable
-     */
-    'no-unreachable': 'error',
-
-    /**
-     * 不允许循环中只有一次迭代
-     *
-     * https://eslint.org/docs/rules/no-unreachable-loop
-     */
-    'no-unreachable-loop': 'error',
-
-    /**
-     * 限制使用 isNaN()检查 NaN
-     *
-     * https://eslint.org/docs/rules/use-isnan
-     */
-    'use-isnan': 'error',
-
-    /**
-     * 限制使用 typeof 表达式与有效的字符串进行比较
-     *
-     * https://eslint.org/docs/rules/valid-typeof
-     */
-    'valid-typeof': 'error',
-
-    /**
-     * 不允许省略花括号当一个块只包含一条语句时
-     *
-     * https://eslint.org/docs/rules/curly
-     */
-    'curly': [
-      'error',
-      'all',
-    ],
-
-    /**
-     * 限制使用 === 和 !==
-     *
-     * https://eslint.org/docs/rules/eqeqeq
-     */
-    'eqeqeq': [
-      'error',
-      'allow-null',
-    ],
-
-    /**
-     * 警告 for-in 中没有判断是否是自身属性
-     *
-     * https://eslint.org/docs/rules/guard-for-in
-     */
-    'guard-for-in': 'warn',
-
-    /**
-     * 警告在 else 前有 return
-     *
-     * https://eslint.org/docs/rules/no-else-return
-     */
-    'no-else-return': 'warn',
-
-    /**
-     * 警告使用了非循环使用标签
-     *
-     * https://eslint.org/docs/rules/no-labels
-     */
-    'no-labels': [
-      'warn',
-      {
-        'allowLoop': true,
-      },
-    ],
-
-    /**
-     * 警告使用了 eval()
-     *
-     * https://eslint.org/docs/rules/no-eval
-     */
-    'no-eval': 'warn',
-
-    /**
-     * 不允许扩展原生对象
-     *
-     * https://eslint.org/docs/rules/no-extend-native
-     */
-    'no-extend-native': 'error',
-
-    /**
-     * 警告使用了不必要的函数绑定
-     *
-     * https://eslint.org/docs/rules/no-extra-bind
-     */
-    'no-extra-bind': 'warn',
-
-    /**
-     * 警告使用了隐式的 eval()
-     *
-     * https://eslint.org/docs/rules/no-implied-eval
-     */
-    'no-implied-eval': 'warn',
-
-    /**
-     * 不允许使用废弃的迭代器属性 __iterator__
-     *
-     * https://eslint.org/docs/rules/no-iterator
-     */
-    'no-iterator': 'error',
-
-    /**
-     * 警告使用了不规则的空白
-     *
-     * https://eslint.org/docs/rules/no-irregular-whitespace
-     */
-    'no-irregular-whitespace': 'warn',
-
-    /**
-     * 警告使用了不必要的嵌套块
-     *
-     * https://eslint.org/docs/rules/no-lone-blocks
-     */
-    'no-lone-blocks': 'warn',
-
-    /**
-     * 警告循环中存在函数
-     *
-     * https://eslint.org/docs/rules/no-loop-func
-     */
-    'no-loop-func': 'warn',
-
-    /**
-     * 警告多行字符串 \
-     *
-     * https://eslint.org/docs/rules/no-multi-str
-     */
-    'no-multi-str': 'warn',
-
-    /**
-     * 不允许重新赋值原生对象
-     *
-     * https://eslint.org/docs/rules/no-native-reassign
-     */
-    'no-native-reassign': 'error',
-
-    /**
-     * 不允许使用原始包装实例
-     *
-     * https://eslint.org/docs/rules/no-new-wrappers
-     */
-    'no-new-wrappers': 'error',
-
-    /**
-     * 警告使用了八进制字面量
-     *
-     * https://eslint.org/docs/rules/no-octal
-     */
-    'no-octal': 'warn',
-
-    /**
-     * 警告在字符串字面量中使用八进制转义序列
-     *
-     * https://eslint.org/docs/rules/no-octal-escape
-     */
-    'no-octal-escape': 'warn',
-
-    /**
-     * 不允许使用 __proto__
-     *
-     * https://eslint.org/docs/rules/no-proto
-     */
-    'no-proto': 'error',
-
-    /**
-     * 警告 var 重新声明变量
-     *
-     * https://eslint.org/docs/rules/no-redeclare
-     */
-    'no-redeclare': 'warn',
-
-    /**
-     * 不允许比较自身
-     *
-     * https://eslint.org/docs/rules/no-self-compare
-     */
-    'no-self-compare': 'error',
-
-    /**
-     * 限制使用更简单结构的三元操作符
-     *
-     * https://eslint.org/docs/rules/no-unneeded-ternary
-     */
-    'no-unneeded-ternary': 'error',
-
-    /**
-     * 警告使用了 with 语句
-     *
-     * https://eslint.org/docs/rules/no-with
-     */
-    'no-with': 'warn',
-
-    /**
-     * 限制调用 parseInt() 函数时传入第二个参数
-     *
-     * https://eslint.org/docs/rules/no-with
-     */
-    'radix': 'error',
-
-    /**
-     * 限制把立即执行的函数包裹起来再执行
-     *
-     * https://eslint.org/docs/rules/wrap-iife
-     */
-    'wrap-iife': [
-      'error',
-      'any',
-    ],
-
-    /**
-     * 不允许使用 delete 删除变量
-     *
-     * https://eslint.org/docs/rules/no-delete-var
-     */
-    'no-delete-var': 'warn',
-
-    /**
-     * 不允许 function 定义中出现重复的参数名
-     *
-     * https://eslint.org/docs/rules/no-dupe-args
-     */
-    'no-dupe-args': 'error',
-
-    /**
-     * 不允许出现重复的 case 条件
-     *
-     * https://eslint.org/docs/rules/no-duplicate-case
-     */
-    'no-duplicate-case': 'error',
-
-    /**
-     * 警告标签与变量同名
-     *
-     * https://eslint.org/docs/rules/no-label-var
-     */
-    'no-label-var': 'warn',
-
-    /**
-     * 不允许变量名或者函数名与全局对象属性、关键字相同
-     *
-     * https://eslint.org/docs/rules/no-shadow-restricted-names
-     */
-    'no-shadow-restricted-names': 'error',
-
-    /**
-     * 不允许使用未声明的变量
-     *
-     * https://eslint.org/docs/rules/no-undef
-     */
-    'no-undef': 'error',
-
-    /**
-     * 警告定义变量的初始值为 undefined
-     *
-     * https://eslint.org/docs/rules/no-undef-init
-     */
-    'no-undef-init': 'warn',
-
-    /**
-     * 警告当前作用域中声明的变量未使用，不检查传递的参数是否被使用
-     *
-     * https://eslint.org/docs/rules/no-unused-vars
-     */
-    'no-unused-vars': [
-      'warn',
-      {
-        'vars': 'local',
-        'args': 'none',
-      },
-    ],
-
-    /**
-     * 不允许非函数在定义前使用
-     *
-     * https://eslint.org/docs/rules/no-use-before-define
-     */
-    'no-use-before-define': [
-      'error',
-      'nofunc',
-    ],
-
-    /**
-     * 限制大括号风格，if-else中的else语句，连同catch 和 finally，都必须在右括号后另起一行
-     *
-     * https://eslint.org/docs/rules/brace-style
-     */
-    'brace-style': [
-      'warn',
-      'stroustrup',
-    ],
-
-    /**
-     * 限制在逗号后加空格
-     * 默认选项 { "before": false, "after": true }
-     *
-     * https://eslint.org/docs/rules/comma-spacing
-     */
-    'comma-spacing': 'error',
-
-    /**
-     * 限制逗号风格，要求逗号放在数组元素、对象属性或变量声明之后，且在同一行
-     *
-     * https://eslint.org/docs/rules/comma-style
-     */
-    'comma-style': [
-      'error',
-      'last',
-    ],
-
-    /**
-     * 警告使用了无参构造函数时未带括号
-     *
-     * https://eslint.org/docs/rules/new-parens
-     */
-    'new-parens': 'warn',
-
-    /**
-     * 不允许使用 Array 构造函数
-     *
-     * https://eslint.org/docs/rules/no-array-constructor
-     */
-    'no-array-constructor': 'error',
-
-    /**
-     * 不允许一行出现多个空格，除了对象属性定义、二元表达式、定义变量对齐
-     *
-     * https://eslint.org/docs/rules/no-multi-spaces
-     */
-    'no-multi-spaces': [
-      'error',
-      {
-        'exceptions': {
-          'Property': true,
-          'BinaryExpression': true,
-          'VariableDeclarator': true,
-        },
-      },
-    ],
-
-    /**
-     * 不允许使用 Object 构造函数
-     *
-     * https://eslint.org/docs/rules/no-new-object
-     */
-    'no-new-object': 'error',
-
-    /**
-     * 不允许函数标识符和其调用之间出现空格
-     *
-     * https://eslint.org/docs/rules/func-call-spacing
-     */
-    'func-call-spacing': 'error',
-
-    /**
-     * 不允许行尾出现空白
-     *
-     * https://eslint.org/docs/rules/no-trailing-spaces
-     */
-    'no-trailing-spaces': 'error',
-
-    /**
-     * 不检查冗余括号
-     *
-     * https://eslint.org/docs/rules/no-extra-parens
-     */
-    'no-extra-parens': 'off',
-
-    /**
-     * 不允许 空格 和 tab 混合缩进
-     *
-     * https://eslint.org/docs/rules/no-mixed-spaces-and-tabs
-     */
-    'no-mixed-spaces-and-tabs': 'error',
-
-    /**
-     * 限制函数中的变量分开声明
-     *
-     * https://eslint.org/docs/rules/one-var
-     */
-    'one-var': [
-      'error',
-      'never',
-    ],
-
-    /**
-     * 限制换行符在操作符之前
-     *
-     * https://eslint.org/docs/rules/operator-linebreak
-     */
-    'operator-linebreak': [
-      'error',
-      'before',
-    ],
-
-    /**
-     * 限制使用单引号除了字符串中包含了一个其它的引号
-     *
-     * https://eslint.org/docs/rules/quotes
-     */
-    'quotes': [
-      'error',
-      'single',
-      { 'avoidEscape': true },
-    ],
-
-    /**
-     * 限制语句末尾使用分号
-     *
-     * https://eslint.org/docs/rules/semi
-     */
-    'semi': [
-      'error',
-      'always',
-    ],
-
-    /**
-     * 限制分号后面有空格
-     * 默认选项为 {"before": false, "after": true}
-     *
-     * https://eslint.org/docs/rules/semi-spacing
-     */
-    'semi-spacing': 'error',
-
-    /**
-     * 限制关键字前后出现空格
-     *
-     * https://eslint.org/docs/rules/keyword-spacing
-     */
-    'keyword-spacing': [
-      'error',
-      {
-        'before': true,
-        'after': true,
-      },
-    ],
-
-    /**
-     * 限制对象字面量的键后面无空格，值前面有空格
-     * 默认选项 { "beforeColon": false, "afterColon": true, "mode": "strict" }
-     *
-     * https://eslint.org/docs/rules/keyword-spacing
-     */
-    'key-spacing': 'error',
-
-    /**
-     * 限制函数圆括号之前有一个空格除了具名函数
-     *
-     * https://eslint.org/docs/rules/space-before-function-paren
-     */
-    'space-before-function-paren': [
-      'error',
-      {
-        'anonymous': 'always',
-        'named': 'never',
-        'asyncArrow': 'always',
-      },
-    ],
-
-    /**
-     * 限制语句块之前有空格
-     *
-     * https://eslint.org/docs/rules/space-before-blocks
-     */
-    'space-before-blocks': [
-      'error',
-      'always',
-    ],
-
-    /**
-     * 限制计算属性中无空格
-     *
-     * https://eslint.org/docs/rules/computed-property-spacing
-     */
-    'computed-property-spacing': [
-      'error',
-      'never',
-    ],
-
-    /**
-     * 限制圆括号内无空格
-     *
-     * https://eslint.org/docs/rules/space-in-parens
-     */
-    'space-in-parens': [
-      'error',
-      'never',
-    ],
-
-    /**
-     * 限制单词类一元操作符之前或之后有空格，限制一元操作符之前或之后无空格
-     * 默认选项 {"words": true, "nonwords": false}
-     *
-     * https://eslint.org/docs/rules/space-unary-ops
-     */
-    'space-unary-ops': 'warn',
-
-    /**
-     * 限制注释前至少要有一个空格，除了固定的几个字符
-     *
-     * https://eslint.org/docs/rules/spaced-comment
-     */
-    'spaced-comment': [
-      'error',
-      'always',
-      {
-        'exceptions': [
-          '-',
-          '+',
-          '\'',
-          '#',
-        ],
-        'block': {
-          'balanced': true,
-        },
-      },
-    ],
-
-    /**
-     * 限制回调函数最大可嵌套3层
-     *
-     * https://eslint.org/docs/rules/max-nested-callbacks
-     */
-    'max-nested-callbacks': [
-      'warn',
-      3,
-    ],
-
-    /**
-     * 限制块语句最大可嵌套6层
-     *
-     * https://eslint.org/docs/rules/max-depth
-     */
-    'max-depth': [
-      'warn',
-      6,
-    ],
-
-    /**
-     * 限制行的最大长度
-     *
-     * https://eslint.org/docs/rules/max-len
-     */
-    'max-len': [
-      'error',
-      {
-        'code': 120,
-        'tabWidth': 4,
-        'ignorePattern': 'data:image\/',
-        'ignoreUrls': true,
-        'ignoreRegExpLiterals': true,
-      },
-    ],
-
-    /**
-     * 限制函数最多定义6个参数
-     *
-     * https://eslint.org/docs/rules/max-params
-     */
-    'max-params': [
-      'warn',
-      6,
-    ],
-
-    /**
-     * 限制中缀操作符周围有空格
-     *
-     * https://eslint.org/docs/rules/space-infix-ops
-     */
-    'space-infix-ops': 'error',
-
-    /**
-     * 限制使用点号访问属性，关键字除外
-     *
-     * https://eslint.org/docs/rules/dot-notation
-     */
-    'dot-notation': [
-      'error',
-      {
-        'allowKeywords': false,
-      },
-    ],
-
-    /**
-     * 限制箭头函数的箭头之前和之后有空格
-     * 默认选项 { "before": true, "after": true }
-     *
-     * https://eslint.org/docs/rules/arrow-spacing
-     */
-    'arrow-spacing': 'error',
-
-    /**
-     * 限制派生类中的构造函数必须调用 super()
-     *
-     * https://eslint.org/docs/rules/constructor-super
-     */
-    'constructor-super': 'error',
-
-    /**
-     * 不允许可能与比较操作符相混淆的地方使用箭头函数
-     * 默认选项 { "allowParens": true }
-     *
-     * https://eslint.org/docs/rules/no-confusing-arrow
-     */
-    'no-confusing-arrow': 'error',
-
-    /**
-     * 警告修改类声明的变量
-     *
-     * https://eslint.org/docs/rules/no-class-assign
-     */
-    'no-class-assign': 'warn',
-
-    /**
-     * 不允许修改 const 声明的变量
-     *
-     * https://eslint.org/docs/rules/no-const-assign
-     */
-    'no-const-assign': 'error',
-
-    /**
-     * 警告类成员中重复的名称
-     *
-     * https://eslint.org/docs/rules/no-dupe-class-members
-     */
-    'no-dupe-class-members': 'warn',
-
-    /**
-     * 警告在构造函数中调用super()之前使用this或super
-     *
-     * https://eslint.org/docs/rules/no-this-before-super
-     */
-    'no-this-before-super': 'warn',
-
-    /**
-     * 警告使用了 let 或 const 非 var
-     *
-     * https://eslint.org/docs/rules/no-var
-     */
-    'no-var': 'warn',
-
-    /**
-     * 警告重复导入
-     *
-     * https://eslint.org/docs/rules/no-duplicate-imports
-     */
-    'no-duplicate-imports': 'warn',
+    'unicode-bom': 'warn',
 
     /**
      * 限制使用剩余参数代替 arguments
@@ -871,34 +18,349 @@ module.exports = {
     'prefer-rest-params': 'error',
 
     /**
-     * 警告使用了 Unicode 字节顺序标记 (BOM)
+     * 限制函数最多定义6个参数
      *
-     * https://eslint.org/docs/rules/unicode-bom
+     * https://eslint.org/docs/rules/max-params
      */
-    'unicode-bom': 'warn',
+    'max-params': ['warn', 6],
 
     /**
-     * 限制一行只有一条语句
-     * 默认选项 { "max": 1 }
+     * 限制块语句最大可嵌套6层
      *
-     * https://eslint.org/docs/rules/max-statements-per-line
+     * https://eslint.org/docs/rules/max-depth
      */
-    'max-statements-per-line': 'error',
+    'max-depth': ['warn', 6],
 
     /**
-     * 警告使用了不必要的构造函数
+     * 限制回调函数最大可嵌套3层
      *
-     * https://eslint.org/docs/rules/no-useless-constructor
+     * https://eslint.org/docs/rules/max-nested-callbacks
      */
-    'no-useless-constructor': 'warn',
+    'max-nested-callbacks': ['warn', 3],
+
+    /**
+     * 限制在条件语句中出现赋值操作符被括号括起来
+     *
+     * https://eslint.org/docs/rules/no-cond-assign
+     */
+    'no-cond-assign': ['error', 'except-parens'],
+
+    /**
+     * 避免在 Promise executor 返回值
+     *
+     * https://eslint.org/docs/rules/no-promise-executor-return
+     */
+    'no-promise-executor-return': 'error',
+
+    /**
+     * 避免在 setter 中返回值
+     *
+     * https://eslint.org/docs/rules/no-setter-return
+     */
+    'no-setter-return': 'error',
+
+    /**
+     * 避免在常规字符串中出现模板字面量占位符语法
+     *
+     * https://eslint.org/docs/rules/no-template-curly-in-string
+     */
+    'no-template-curly-in-string': 'error',
+
+    /**
+     * 避免不安全的使用可选链
+     *
+     * https://eslint.org/docs/rules/no-unsafe-optional-chaining
+     */
+    'no-unsafe-optional-chaining': 'error',
+
+    /**
+     * 避免不必要的 catch 子句
+     *
+     * https://eslint.org/docs/rules/no-useless-catch
+     */
+    'no-useless-catch': 'error',
+
+    /**
+     * 限制在点号之前换行
+     *
+     * https://eslint.org/docs/rules/dot-location
+     */
+    'dot-location': ['error', 'property'],
+
+    /**
+     * 限制数组方法的回调函数中有 return 语句
+     *
+     * https://eslint.org/docs/rules/array-callback-return
+     */
+    'array-callback-return': [
+      'error',
+      { allowImplicit: true },
+    ],
+
+    /**
+     * 限制在 JSX 属性中使用一致的双引号
+     * 默认选项 'prefer-double'
+     *
+     * https://eslint.org/docs/rules/jsx-quotes
+     */
+    'jsx-quotes': 'error',
+
+    /**
+     * 限制使用一致的换行符风格
+     * 默认选项 'unix'
+     *
+     * https://eslint.org/docs/rules/jsx-quotes
+     */
+    'linebreak-style': 'error',
+
+    /**
+     * 警告使用 alert()
+     *
+     * https://eslint.org/docs/rules/no-alert
+     */
+    'no-alert': 'warn',
+
+    /**
+     * 警告使用 Buffer() 构造函数
+     *
+     * https://eslint.org/docs/rules/no-buffer-constructor
+     */
+    'no-buffer-constructor': 'warn',
+
+    /**
+     * 避免使用 caller 或 callee
+     *
+     * https://eslint.org/docs/rules/no-caller
+     */
+    'no-caller': 'error',
+
+    /**
+     * 避免与 -0 进行比较
+     *
+     * https://eslint.org/docs/rules/no-compare-neg-zero
+     */
+    'no-compare-neg-zero': 'error',
+
+    /**
+     * 避免在正则表达式中使用在 ASCII 中 0-31 范围内的特殊和不可见的字符
+     *
+     * https://eslint.org/docs/rules/no-control-regex
+     */
+    'no-control-regex': 'error',
+
+    /**
+     * 避免对关系运算符的左操作数使用否定操作符
+     *
+     * https://eslint.org/docs/rules/no-unsafe-negation
+     */
+    'no-unsafe-negation': 'error',
+
+    /**
+     * 避免出现空块语句，catch 语句除外
+     *
+     * https://eslint.org/docs/rules/no-empty
+     */
+    'no-empty': [
+      'error',
+      { 'allowEmptyCatch': true },
+    ],
+
+    /**
+     * 避免出现空函数
+     *
+     * https://eslint.org/docs/rules/no-empty-function
+     */
+    'no-empty-function': 'error',
+
+    /**
+     * 避免使用不必要的标签
+     *
+     * https://eslint.org/docs/rules/no-extra-label
+     */
+    'no-extra-label': 'error',
+
+    /**
+     * 避免使用不必要的分号
+     *
+     * https://eslint.org/docs/rules/no-extra-semi
+     */
+    'no-extra-semi': 'error',
+
+    /**
+     * 避免使用浮点小数
+     *
+     * https://eslint.org/docs/rules/no-floating-decimal
+     */
+    'no-floating-decimal': 'error',
+
+    /**
+     * 避免 if 语句作为唯一语句出现在 else 语句块中
+     *
+     * https://eslint.org/docs/rules/no-lonely-if
+     */
+    'no-lonely-if': 'error',
+
+    /**
+     * 警告连续赋值
+     *
+     * https://eslint.org/docs/rules/no-multi-assign
+     */
+    'no-multi-assign': 'warn',
+
+    /**
+     * 警告出现多个空行
+     *
+     * https://eslint.org/docs/rules/no-multiple-empty-lines
+     */
+    'no-multiple-empty-lines': 'warn',
+
+    /**
+     * 避免使用 new require
+     *
+     * https://eslint.org/docs/rules/no-new-require
+     */
+    'no-new-require': 'error',
+
+    /**
+     * 避免在返回语句中赋值
+     * 默认选项 'except-parens'
+     *
+     * https://eslint.org/docs/rules/no-return-assign
+     */
+    'no-return-assign': 'error',
+
+    /**
+     * 避免 Script URL
+     *
+     * https://eslint.org/docs/rules/no-script-url
+     */
+    'no-script-url': 'warn',
+
+    /**
+     * 限制 Error 对象可以被抛出
+     *
+     * https://eslint.org/docs/rules/no-throw-literal
+     */
+    'no-throw-literal': 'warn',
+
+    /**
+     * 避免出现未使用过的表达式
+     *
+     * https://eslint.org/docs/rules/no-unused-expressions
+     */
+    'no-unused-expressions': ['warn', { allowShortCircuit: true }],
+
+    /**
+     * 避免出现未使用过的标签
+     *
+     * https://eslint.org/docs/rules/no-unused-labels
+     */
+    'no-unused-labels': 'error',
+
+    /**
+     * 避免出现解构重命名后的变量名跟原来一样
+     *
+     * https://eslint.org/docs/rules/no-unused-labels
+     */
+    'no-useless-rename': 'error',
+
+    /**
+     * 避免出现多余的 return 语句
+     *
+     * https://eslint.org/docs/rules/no-useless-return
+     */
+    'no-useless-return': 'error',
+
+    /**
+     * 限制在花括号内使用一致的换行符
+     *
+     * https://eslint.org/docs/rules/object-curly-newline
+     */
+    'object-curly-newline': ['error', { consistent: true, multiline: true }],
+
+    /**
+     * 限制对象字面量的简写或非简写一致性，但尽可能的全部使用简写
+     *
+     * https://eslint.org/docs/rules/object-shorthand
+     */
+    'object-shorthand': ['off', 'consistent-as-needed'],
+
+    /**
+     * 限制每个变量初始化语句换行
+     * 默认选项 'initializations'
+     *
+     * https://eslint.org/docs/rules/one-var-declaration-per-line
+     */
+    'one-var-declaration-per-line': 'error',
+
+    /**
+     * 限制使用箭头函数作为回调函数
+     *
+     * https://eslint.org/docs/rules/prefer-arrow-callback
+     */
+    'prefer-arrow-callback': 'warn',
+
+    /**
+     * 限制一个变量不会被重新赋值，使用const
+     *
+     * https://eslint.org/docs/rules/prefer-const
+     */
+    'prefer-const': 'error',
+
+    /**
+     * 限制使用 Error 对象作为 Promise 拒绝的原因
+     *
+     * https://eslint.org/docs/rules/prefer-promise-reject-errors
+     */
+    'prefer-promise-reject-errors': 'warn',
+
+    /**
+     * 警告使用扩展语法而非.apply()
+     *
+     * https://eslint.org/docs/rules/prefer-spread
+     */
+    'prefer-spread': 'warn',
+
+    /**
+     * 避免剩余和扩展运算符及其表达式之间有空格
+     *
+     * https://eslint.org/docs/rules/rest-spread-spacing
+     */
+    'rest-spread-spacing': ['error', 'never'],
+
+    /**
+     * 限制分号出现在句子末尾
+     *
+     * https://eslint.org/docs/rules/semi-style
+     */
+    'semi-style': ['error', 'last'],
+
+    /**
+     * 限制创建 Symbol 实例需要一个参数
+     *
+     * https://eslint.org/docs/rules/symbol-description
+     */
+    'symbol-description': 'warn',
+
+    /**
+     * 避免模板字符串中花括号内出现空格
+     *
+     * https://eslint.org/docs/rules/template-curly-spacing
+     */
+    'template-curly-spacing': ['error', 'never'],
+
+    /**
+     * 避免在模板标记和它们的字面量之间出现空格
+     *
+     * https://eslint.org/docs/rules/template-tag-spacing
+     */
+    'template-tag-spacing': ['error', 'never'],
+
+    /**
+     * 限制条件比较时，变量在左边，常量在右边
+     *
+     * https://eslint.org/docs/rules/yoda
+     */
+    'yoda': 'warn',
   },
-  overrides: [
-    {
-      files: ['**/*.test.js', '**/*.spec.js'],
-      env: {
-        es6: true,
-        jest: true,
-      },
-    },
-  ],
 };
