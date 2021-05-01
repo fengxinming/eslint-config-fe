@@ -875,7 +875,7 @@ module.exports = {
     'dot-notation': [
       'error',
       {
-        'allowKeywords': false,
+        'allowKeywords': true,
       },
     ],
 
