@@ -5,17 +5,17 @@ module.exports = {
   parserOptions: {
     sourceType: 'module',
     ecmaFeatures: {
-      jsx: true,
+      jsx: true
     },
-    requireConfigFile: false,
+    requireConfigFile: false
   },
   plugins: [
-    '@babel',
+    '@babel'
   ],
   env: {
     browser: true,
     node: true,
-    es6: true,
+    es6: true
   },
   rules: {
     /**
@@ -46,7 +46,7 @@ module.exports = {
      */
     'no-fallthrough': [
       'error',
-      { 'commentPattern': 'break[\\s\\w]*omitted' },
+      { 'commentPattern': 'break[\\s\\w]*omitted' }
     ],
 
     /**
@@ -233,8 +233,8 @@ module.exports = {
       'error',
       2,
       {
-        SwitchCase: 1,
-      },
+        SwitchCase: 1
+      }
     ],
 
     /**
@@ -246,8 +246,8 @@ module.exports = {
       'error',
       {
         'before': false,
-        'after': true,
-      },
+        'after': true
+      }
     ],
 
     /**
@@ -272,8 +272,8 @@ module.exports = {
     'no-console': [
       'warn',
       {
-        allow: ['error', 'warn', 'info'],
-      },
+        allow: ['error', 'warn', 'info']
+      }
     ],
 
     /**
@@ -284,20 +284,11 @@ module.exports = {
     'no-constant-condition': 'warn',
 
     /**
-     * 限制尾部有逗号
+     * 限制尾部没有逗号
      *
      * https://eslint.org/docs/rules/comma-dangle
      */
-    'comma-dangle': [
-      'error',
-      {
-        'arrays': 'always-multiline',
-        'objects': 'always-multiline',
-        'imports': 'always-multiline',
-        'exports': 'always-multiline',
-        'functions': 'never',
-      },
-    ],
+    'comma-dangle': ['error', 'never'],
 
     /**
      * 避免使用 debugger
@@ -433,8 +424,8 @@ module.exports = {
     'no-labels': [
       'warn',
       {
-        'allowLoop': true,
-      },
+        'allowLoop': true
+      }
     ],
 
     /**
@@ -635,8 +626,8 @@ module.exports = {
       'warn',
       {
         'vars': 'local',
-        'args': 'none',
-      },
+        'args': 'none'
+      }
     ],
 
     /**
@@ -693,9 +684,9 @@ module.exports = {
         'exceptions': {
           'Property': true,
           'BinaryExpression': true,
-          'VariableDeclarator': true,
-        },
-      },
+          'VariableDeclarator': true
+        }
+      }
     ],
 
     /**
@@ -748,7 +739,7 @@ module.exports = {
     'quotes': [
       'error',
       'single',
-      { 'avoidEscape': true },
+      { 'avoidEscape': true }
     ],
 
     /**
@@ -768,8 +759,8 @@ module.exports = {
       'error',
       {
         'before': true,
-        'after': true,
-      },
+        'after': true
+      }
     ],
 
     /**
@@ -790,8 +781,8 @@ module.exports = {
       {
         'anonymous': 'always',
         'named': 'never',
-        'asyncArrow': 'always',
-      },
+        'asyncArrow': 'always'
+      }
     ],
 
     /**
@@ -836,12 +827,12 @@ module.exports = {
           '-',
           '+',
           '\'',
-          '#',
+          '#'
         ],
         'block': {
-          'balanced': true,
-        },
-      },
+          'balanced': true
+        }
+      }
     ],
 
     /**
@@ -856,8 +847,8 @@ module.exports = {
         'tabWidth': 4,
         'ignorePattern': 'data:image/',
         'ignoreUrls': true,
-        'ignoreRegExpLiterals': true,
-      },
+        'ignoreRegExpLiterals': true
+      }
     ],
 
     /**
@@ -875,8 +866,8 @@ module.exports = {
     'dot-notation': [
       'error',
       {
-        'allowKeywords': true,
-      },
+        'allowKeywords': false
+      }
     ],
 
     /**
@@ -970,9 +961,9 @@ module.exports = {
       {
         'capIsNewExceptions': [
           'Vue',
-          'React',
-        ],
-      },
+          'React'
+        ]
+      }
     ],
 
     /**
@@ -988,15 +979,15 @@ module.exports = {
      *
      * https://eslint.org/docs/rules/semi
      */
-    '@babel/semi': 'error',
+    '@babel/semi': 'error'
   },
   overrides: [
     {
       files: ['**/*.test.js', '**/*.spec.js'],
       env: {
         es6: true,
-        jest: true,
-      },
-    },
-  ],
+        jest: true
+      }
+    }
+  ]
 };
