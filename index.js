@@ -94,7 +94,7 @@ module.exports = {
      */
     'array-callback-return': [
       'error',
-      { allowImplicit: true },
+      { allowImplicit: true }
     ],
 
     /**
@@ -109,9 +109,9 @@ module.exports = {
      * 限制使用一致的换行符风格
      * 默认选项 'unix'
      *
-     * https://eslint.org/docs/rules/jsx-quotes
+     * https://eslint.org/docs/rules/linebreak-style
      */
-    'linebreak-style': 'error',
+    // 'linebreak-style': 'error',
 
     /**
      * 警告使用 alert()
@@ -162,7 +162,7 @@ module.exports = {
      */
     'no-empty': [
       'error',
-      { 'allowEmptyCatch': true },
+      { 'allowEmptyCatch': true }
     ],
 
     /**
@@ -361,6 +361,6 @@ module.exports = {
      *
      * https://eslint.org/docs/rules/yoda
      */
-    'yoda': 'warn',
-  },
+    'yoda': 'warn'
+  }
 };
