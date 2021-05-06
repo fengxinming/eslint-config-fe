@@ -242,9 +242,9 @@ module.exports = {
     ],
 
     /**
-     * 关闭限制定义 React 全局变量
+     * 限制定义 React 全局变量
      */
-    'react/jsx-uses-react': 'off',
+    'react/jsx-uses-react': 'error',
 
     /**
      * 避免jsx中变量未被使用
