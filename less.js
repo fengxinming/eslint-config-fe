@@ -859,14 +859,15 @@ module.exports = {
     'space-infix-ops': 'error',
 
     /**
-     * 限制使用点号访问属性，关键字除外
+     * 限制使用点号访问属性，部分关键字除外
+     * 默认选项 { "allowKeywords": true }
      *
      * https://eslint.org/docs/rules/dot-notation
      */
     'dot-notation': [
       'error',
       {
-        'allowKeywords': false
+        'allowPattern': '^catch$'
       }
     ],
 
