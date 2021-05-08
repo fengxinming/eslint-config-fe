@@ -21,7 +21,7 @@ npm install --save-dev eslint @babel/core @babel/eslint-parser @babel/eslint-plu
 
 ```js
 {
-  extends: ["fe"]
+  "extends": ["fe"]
 }
 ```
 
@@ -55,7 +55,7 @@ module.exports = {
 
 ```js
 {
-  extends: [
+  "extends": [
     "fe",
     "fe/react"
   ]
