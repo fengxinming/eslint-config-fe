@@ -15,7 +15,7 @@ npm install --save-dev eslint @babel/core @babel/eslint-parser @babel/eslint-plu
 
 ## Usage
 
-### For base JS
+### Basic JS eslint config
 
 #### All rules .eslintrc
 
@@ -37,7 +37,7 @@ npm install --save-dev eslint @babel/core @babel/eslint-parser @babel/eslint-plu
 
 [learn more](https://github.com/fengxinming/eslint-config-fe/blob/main/less.js)
 
-### For React
+### React eslint config
 
 ```bash
 npm install --save-dev @babel/preset-react eslint-plugin-react eslint-plugin-react-hooks
@@ -63,3 +63,22 @@ module.exports = {
 ```
 
 [learn more](https://github.com/fengxinming/eslint-config-fe/blob/main/react/index.js)
+
+### TS eslint config
+
+```bash
+npm install --save-dev @typescript-eslint/parser @typescript-eslint/eslint-plugin
+```
+
+#### .eslintrc
+
+```js
+{
+  "extends": [
+    "fe",
+    "fe/ts"
+  ]
+}
+```
+
+[learn more](https://github.com/fengxinming/eslint-config-fe/blob/main/ts/index.js)
