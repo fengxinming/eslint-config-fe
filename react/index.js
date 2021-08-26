@@ -20,7 +20,7 @@ module.exports = {
      *
      * https://reactjs.org/docs/hooks-rules.html
      */
-    'react-hooks/exhaustive-deps': 'warn',
+    'react-hooks/exhaustive-deps': 'error',
 
     /**
      * 关闭默认属性类型定义
@@ -41,7 +41,7 @@ module.exports = {
      *
      * https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/forbid-component-props.md
      */
-    'react/forbid-component-props': 'off',
+    // 'react/forbid-component-props': 'off',
 
     /**
      * 关闭禁止原生组件使用
