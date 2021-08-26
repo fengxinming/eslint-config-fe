@@ -44,7 +44,8 @@ module.exports = {
         '@typescript-eslint/member-ordering': 'warn',
         '@typescript-eslint/no-array-constructor': 'error',
         'no-empty-function': 'off',
-        '@typescript-eslint/no-empty-function': 'error',
+        // 编辑器可以检查出空函数
+        '@typescript-eslint/no-empty-function': 'off',
         '@typescript-eslint/no-empty-interface': 'warn',
         '@typescript-eslint/no-explicit-any': 'off',
         'no-extra-parens': 'off',
@@ -69,6 +70,8 @@ module.exports = {
           'error',
           { vars: 'all', args: 'after-used', ignoreRestSiblings: true }
         ],
+        'init-declarations': 'off',
+        '@typescript-eslint/init-declarations': ['error'],
         '@typescript-eslint/no-use-before-define': 'error',
         '@typescript-eslint/no-useless-constructor': 'error',
         '@typescript-eslint/no-var-requires': 'error',
@@ -85,20 +88,41 @@ module.exports = {
         '@typescript-eslint/promise-function-async': 'off',
         '@typescript-eslint/require-array-sort-compare': 'off',
         '@typescript-eslint/restrict-plus-operands': 'warn',
-        'semi': 'off',
+        '@typescript-eslint/dot-notation': ['error', {
+          allowIndexSignaturePropertyAccess: true
+        }],
+        semi: 'off',
         '@typescript-eslint/semi': 'error',
         '@typescript-eslint/strict-boolean-expressions': 'off',
         '@typescript-eslint/triple-slash-reference': 'error',
         '@typescript-eslint/type-annotation-spacing': 'error',
         '@typescript-eslint/unbound-method': 'off',
         '@typescript-eslint/unified-signatures': 'warn',
-        '@typescript-eslint/ban-ts-comment': 'warn',
+        '@typescript-eslint/ban-ts-comment': [
+          'warn',
+          {
+            'ts-expect-error': 'allow-with-description',
+            'ts-ignore': 'allow-with-description',
+            'ts-nocheck': 'allow-with-description',
+            'ts-check': 'allow-with-description'
+          }
+        ],
+        '@typescript-eslint/quotes': [
+          'error',
+          'single',
+          { avoidEscape: true }
+        ],
+        quotes: 'off',
+
         // 和TS的规则冲突
         'no-undef': 'off',
         'require-await': 'off',
         'no-use-before-define': 'off',
         'no-dupe-class-members': 'off',
-        'no-duplicate-imports': 'off'
+        'no-duplicate-imports': 'off',
+        'no-useless-constructor': 'off',
+        'no-redeclare': 'off',
+        'dot-notation': 'off'
       }
     }
   ]
