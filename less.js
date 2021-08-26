@@ -46,7 +46,7 @@ module.exports = {
      */
     'no-fallthrough': [
       'error',
-      { 'commentPattern': 'break[\\s\\w]*omitted' }
+      { commentPattern: 'break[\\s\\w]*omitted' }
     ],
 
     /**
@@ -229,7 +229,7 @@ module.exports = {
      *
      * https://eslint.org/docs/rules/no-mixed-spaces-and-tabs
      */
-    'indent': [
+    indent: [
       'error',
       2,
       {
@@ -245,8 +245,8 @@ module.exports = {
     'generator-star-spacing': [
       'error',
       {
-        'before': false,
-        'after': true
+        before: false,
+        after: true
       }
     ],
 
@@ -393,14 +393,14 @@ module.exports = {
      *
      * https://eslint.org/docs/rules/curly
      */
-    'curly': ['error', 'all'],
+    curly: ['error', 'all'],
 
     /**
      * 限制使用 === 和 !==
      *
      * https://eslint.org/docs/rules/eqeqeq
      */
-    'eqeqeq': ['error', 'allow-null'],
+    eqeqeq: ['error', 'allow-null'],
 
     /**
      * 警告 for-in 中没有判断是否是自身属性
@@ -424,7 +424,7 @@ module.exports = {
     'no-labels': [
       'warn',
       {
-        'allowLoop': true
+        allowLoop: true
       }
     ],
 
@@ -559,7 +559,7 @@ module.exports = {
      *
      * https://eslint.org/docs/rules/no-with
      */
-    'radix': 'error',
+    radix: 'error',
 
     /**
      * 限制把立即执行的函数包裹起来再执行
@@ -625,8 +625,8 @@ module.exports = {
     'no-unused-vars': [
       'warn',
       {
-        'vars': 'local',
-        'args': 'none'
+        vars: 'local',
+        args: 'none'
       }
     ],
 
@@ -681,10 +681,10 @@ module.exports = {
     'no-multi-spaces': [
       'error',
       {
-        'exceptions': {
-          'Property': true,
-          'BinaryExpression': true,
-          'VariableDeclarator': true
+        exceptions: {
+          Property: true,
+          BinaryExpression: true,
+          VariableDeclarator: true
         }
       }
     ],
@@ -736,10 +736,10 @@ module.exports = {
      *
      * https://eslint.org/docs/rules/quotes
      */
-    'quotes': [
+    quotes: [
       'error',
       'single',
-      { 'avoidEscape': true }
+      { avoidEscape: true }
     ],
 
     /**
@@ -758,8 +758,8 @@ module.exports = {
     'keyword-spacing': [
       'error',
       {
-        'before': true,
-        'after': true
+        before: true,
+        after: true
       }
     ],
 
@@ -779,9 +779,9 @@ module.exports = {
     'space-before-function-paren': [
       'error',
       {
-        'anonymous': 'always',
-        'named': 'never',
-        'asyncArrow': 'always'
+        anonymous: 'always',
+        named: 'never',
+        asyncArrow: 'always'
       }
     ],
 
@@ -823,14 +823,14 @@ module.exports = {
       'error',
       'always',
       {
-        'exceptions': [
+        exceptions: [
           '-',
           '+',
           '\'',
           '#'
         ],
-        'block': {
-          'balanced': true
+        block: {
+          balanced: true
         }
       }
     ],
@@ -843,11 +843,11 @@ module.exports = {
     'max-len': [
       'error',
       {
-        'code': 120,
-        'tabWidth': 4,
-        'ignorePattern': 'data:image/',
-        'ignoreUrls': true,
-        'ignoreRegExpLiterals': true
+        code: 120,
+        tabWidth: 4,
+        ignorePattern: 'data:image\\/',
+        ignoreUrls: true,
+        ignoreRegExpLiterals: true
       }
     ],
 
@@ -867,7 +867,7 @@ module.exports = {
     'dot-notation': [
       'error',
       {
-        'allowPattern': '^catch$'
+        allowPattern: '^catch$'
       }
     ],
 
@@ -951,6 +951,12 @@ module.exports = {
      */
     'no-useless-constructor': 'warn',
 
+    /**
+     * 限制对象属性在有需要的情况下使用引号
+     *
+     * https://eslint.org/docs/rules/quote-props
+     */
+    'quote-props': ['error', 'as-needed'],
 
     /**
      * 限制构造函数首字母大写
@@ -960,7 +966,7 @@ module.exports = {
     '@babel/new-cap': [
       'error',
       {
-        'capIsNewExceptions': [
+        capIsNewExceptions: [
           'Vue',
           'React'
         ]
