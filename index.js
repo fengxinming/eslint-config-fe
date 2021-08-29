@@ -162,7 +162,7 @@ module.exports = {
      */
     'no-empty': [
       'error',
-      { 'allowEmptyCatch': true }
+      { allowEmptyCatch: true }
     ],
 
     /**
@@ -361,6 +361,6 @@ module.exports = {
      *
      * https://eslint.org/docs/rules/yoda
      */
-    'yoda': 'warn'
+    yoda: 'warn'
   }
 };
