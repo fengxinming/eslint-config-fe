@@ -113,6 +113,7 @@ module.exports = {
           { avoidEscape: true }
         ],
         quotes: 'off',
+        'spaced-comment': ['error', 'always', { 'markers': ['/'] }],
 
         // 和TS的规则冲突
         'no-undef': 'off',
