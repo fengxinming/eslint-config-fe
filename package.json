@@ -21,7 +21,7 @@
     "@babel/core": "^7.13.16",
     "@babel/eslint-parser": "^7.11.0",
     "@babel/eslint-plugin": "^7.11.0",
-    "eslint": "^6.2.0 || 7.x"
+    "eslint": ">=6.2.0"
   },
   "repository": {
     "type": "git",
