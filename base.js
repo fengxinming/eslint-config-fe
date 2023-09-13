@@ -1,32 +1,32 @@
 module.exports = {
-    extends: [
-      './rules/base',
-      './rules/base-babel'
-    ].map(require.resolve),
-    parser: '@babel/eslint-parser',
-    parserOptions: {
-      sourceType: 'module',
-      ecmaFeatures: {
-        jsx: true
-      },
-      requireConfigFile: false
+  extends: [
+    './rules/base',
+    './rules/base-babel'
+  ].map(require.resolve),
+  parser: '@babel/eslint-parser',
+  parserOptions: {
+    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true
     },
-    plugins: [
-      '@babel'
-    ],
-    env: {
-      browser: true,
-      node: true,
-      es6: true
-    },
-    overrides: [
-      {
-        files: ['**/*.test.js', '**/*.spec.js'],
-        env: {
-          es6: true,
-          jest: true
-        }
+    requireConfigFile: false
+  },
+  plugins: [
+    '@babel'
+  ],
+  env: {
+    browser: true,
+    node: true,
+    es6: true
+  },
+  overrides: [
+    {
+      files: ['**/*.test.js', '**/*.spec.js'],
+      env: {
+        es6: true,
+        jest: true
       }
-    ]
+    }
+  ]
 };
-  
+
