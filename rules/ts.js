@@ -59,8 +59,8 @@ module.exports = {
         'error',
         { vars: 'all', args: 'after-used', ignoreRestSiblings: true }
       ],
-      'init-declarations': 'off',
-      '@typescript-eslint/init-declarations': 'off',
+      // 'init-declarations': 'off',
+      // '@typescript-eslint/init-declarations': 'off',
       '@typescript-eslint/no-use-before-define': 'error',
       '@typescript-eslint/no-useless-constructor': 'error',
       '@typescript-eslint/no-var-requires': 'error',
