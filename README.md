@@ -27,15 +27,15 @@ npm install --save-dev eslint @babel/core @babel/eslint-parser @babel/eslint-plu
 
 [learn more](https://github.com/fengxinming/eslint-config-fe/blob/main/index.js)
 
-#### Less rules .eslintrc
+#### Base rules .eslintrc
 
 ```js
 {
-  extends: ["fe/less"]
+  extends: ["fe/base"]
 }
 ```
 
-[learn more](https://github.com/fengxinming/eslint-config-fe/blob/main/less.js)
+[learn more](https://github.com/fengxinming/eslint-config-fe/blob/main/base.js)
 
 ### React eslint config
 
@@ -62,7 +62,7 @@ module.exports = {
 }
 ```
 
-[learn more](https://github.com/fengxinming/eslint-config-fe/blob/main/react/index.js)
+[learn more](https://github.com/fengxinming/eslint-config-fe/blob/main/react.js)
 
 ### TS eslint config
 
@@ -81,4 +81,4 @@ npm install --save-dev @typescript-eslint/parser @typescript-eslint/eslint-plugi
 }
 ```
 
-[learn more](https://github.com/fengxinming/eslint-config-fe/blob/main/ts/index.js)
+[learn more](https://github.com/fengxinming/eslint-config-fe/blob/main/ts.js)
