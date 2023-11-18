@@ -9,7 +9,12 @@ module.exports = {
     ecmaFeatures: {
       jsx: true
     },
-    requireConfigFile: false
+    requireConfigFile: false,
+    babelOptions: {
+      babelrc: false,
+      configFile: false,
+      presets: ['@babel/preset-env']
+    }
   },
   plugins: [
     '@babel'
@@ -29,4 +34,3 @@ module.exports = {
     }
   ]
 };
-

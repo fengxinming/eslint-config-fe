@@ -65,7 +65,7 @@ module.exports = {
     '@typescript-eslint/no-useless-constructor': 'error',
     '@typescript-eslint/no-var-requires': 'error',
     '@typescript-eslint/no-dupe-class-members': 'error',
-    // '@typescript-eslint/no-duplicate-imports': 'error', 兼容 @typescript-eslint/eslint-plugin@6
+    '@typescript-eslint/no-duplicate-imports': 'error',
     '@typescript-eslint/no-extra-non-null-assertion': 'error',
     '@typescript-eslint/prefer-for-of': 'error',
     '@typescript-eslint/prefer-function-type': 'error',
@@ -114,4 +114,3 @@ module.exports = {
     'dot-notation': 'off'
   }
 };
-

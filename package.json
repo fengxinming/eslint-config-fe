@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-fe",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "ESLint config for Front End.",
   "main": "index.js",
   "scripts": {
@@ -8,21 +8,23 @@
   },
   "author": "Jesse Feng <fxm0016@126.com>",
   "license": "MIT",
-  "devDependencies": {
-    "@babel/core": "^7.14.0",
-    "@babel/eslint-parser": "^7.13.14",
-    "@babel/eslint-plugin": "^7.13.16",
-    "@commitlint/cli": "^17.6.1",
-    "@commitlint/config-conventional": "^17.6.1",
-    "eslint": "^8.48.0",
-    "husky": "^4.3.0",
-    "lint-staged": "^13.2.1"
-  },
-  "peerDependencies": {
-    "@babel/core": "^7.13.16",
+  "dependencies": {
+    "@babel/core": "^7.11.0",
     "@babel/eslint-parser": "^7.11.0",
     "@babel/eslint-plugin": "^7.11.0",
+    "@babel/preset-env": "^7.11.0",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/parser": "^5.62.0",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "eslint": "^8.0.0"
+  },
+  "peerDependencies": {
     "eslint": ">=6.2.0"
+  },
+  "engines": {
+    "node": "^14.18.0 || >=16.0.0"
   },
   "repository": {
     "type": "git",
@@ -37,16 +39,5 @@
   "bugs": {
     "url": "https://github.com/fengxinming/eslint-config-fe/issues"
   },
-  "homepage": "https://github.com/fengxinming/eslint-config-fe#readme",
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "git add"
-    ]
-  }
+  "homepage": "https://github.com/fengxinming/eslint-config-fe#readme"
 }
