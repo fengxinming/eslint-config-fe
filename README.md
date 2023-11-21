@@ -10,7 +10,7 @@
 ## Installation
 
 ```bash
-npm install --save-dev eslint @babel/core @babel/eslint-parser @babel/eslint-plugin eslint-config-fe
+npm install --save-dev eslint eslint-config-fe
 ```
 
 ## Usage
@@ -27,28 +27,10 @@ npm install --save-dev eslint @babel/core @babel/eslint-parser @babel/eslint-plu
 
 [learn more](https://github.com/fengxinming/eslint-config-fe/blob/main/index.js)
 
-#### Base rules .eslintrc
-
-```js
-{
-  extends: ["fe/base"]
-}
-```
-
-[learn more](https://github.com/fengxinming/eslint-config-fe/blob/main/base.js)
-
 ### React eslint config
 
 ```bash
 npm install --save-dev @babel/preset-react eslint-plugin-react eslint-plugin-react-hooks
-```
-
-#### babel.config.js
-
-```js
-module.exports = {
-  presets: ['@babel/preset-react']
-};
 ```
 
 #### .eslintrc
