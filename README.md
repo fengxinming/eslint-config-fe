@@ -48,10 +48,6 @@ npm install --save-dev @babel/preset-react eslint-plugin-react eslint-plugin-rea
 
 ### TS eslint config
 
-```bash
-npm install --save-dev @typescript-eslint/parser @typescript-eslint/eslint-plugin
-```
-
 #### .eslintrc
 
 ```js

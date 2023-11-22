@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-fe",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "ESLint config for Front End.",
   "main": "index.js",
   "scripts": {
