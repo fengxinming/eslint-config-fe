@@ -4,7 +4,7 @@ const tsConfig = require('./rules/ts');
 module.exports = {
   overrides: [
     merge({
-      files: ['*.ts', '*.tsx'],
+      files: ['*.ts', '*.mts', '*.tsx', '*.mtsx'],
       parser: '@typescript-eslint/parser',
       parserOptions: {
         ecmaFeatures: {
