@@ -2,7 +2,7 @@
 
 [![npm package](https://nodei.co/npm/eslint-config-fe.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/eslint-config-fe)
 
-> Note:  ESLint config for Front End. eslint >= `8.57.0`, node `^20.19.0 || ^22.13.0 || >=24`
+> Note:  ESLint config for Front End. eslint `^8.57.0`, node `^20.19.0 || ^22.13.0 || >=24`
 
 [![NPM version](https://img.shields.io/npm/v/eslint-config-fe.svg?style=flat)](https://npmjs.org/package/eslint-config-fe)
 [![NPM Downloads](https://img.shields.io/npm/dm/eslint-config-fe.svg?style=flat)](https://npmjs.org/package/eslint-config-fe)
