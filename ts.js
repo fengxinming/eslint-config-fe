@@ -12,7 +12,7 @@ module.exports = {
         },
         project: './**/tsconfig.json'
       },
-      plugins: ['@typescript-eslint']
+      plugins: ['@typescript-eslint', '@stylistic/ts']
     }, tsConfig)
   ]
 };

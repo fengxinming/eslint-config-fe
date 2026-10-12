@@ -9,27 +9,12 @@ module.exports = {
       }
     ],
     '@typescript-eslint/await-thenable': 'warn',
-    '@typescript-eslint/ban-types': 'error',
     '@typescript-eslint/naming-convention': 'off',
     '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-member-accessibility': ['error', { accessibility: 'no-public' }],
     'func-call-spacing': 'off',
-    '@typescript-eslint/func-call-spacing': 'error',
     '@typescript-eslint/indent': 'off',
-    '@typescript-eslint/member-delimiter-style': [
-      'error',
-      {
-        multiline: {
-          delimiter: 'semi',
-          requireLast: true
-        },
-        singleline: {
-          delimiter: 'comma',
-          requireLast: false
-        }
-      }
-    ],
     '@typescript-eslint/member-ordering': 'warn',
     '@typescript-eslint/no-array-constructor': 'error',
     'no-empty-function': 'off',
@@ -65,7 +50,6 @@ module.exports = {
     '@typescript-eslint/no-useless-constructor': 'error',
     '@typescript-eslint/no-var-requires': 'error',
     '@typescript-eslint/no-dupe-class-members': 'error',
-    '@typescript-eslint/no-duplicate-imports': 'error',
     '@typescript-eslint/no-extra-non-null-assertion': 'error',
     '@typescript-eslint/prefer-for-of': 'error',
     '@typescript-eslint/prefer-function-type': 'error',
@@ -81,10 +65,8 @@ module.exports = {
       allowIndexSignaturePropertyAccess: true
     }],
     semi: 'off',
-    '@typescript-eslint/semi': 'error',
     '@typescript-eslint/strict-boolean-expressions': 'off',
     '@typescript-eslint/triple-slash-reference': 'error',
-    '@typescript-eslint/type-annotation-spacing': 'error',
     '@typescript-eslint/unbound-method': 'off',
     '@typescript-eslint/unified-signatures': 'warn',
     '@typescript-eslint/ban-ts-comment': [
@@ -96,11 +78,6 @@ module.exports = {
         'ts-check': 'allow-with-description'
       }
     ],
-    '@typescript-eslint/quotes': [
-      'error',
-      'single',
-      { avoidEscape: true }
-    ],
     quotes: 'off',
 
     // 和TS的规则冲突
@@ -111,6 +88,34 @@ module.exports = {
     'no-duplicate-imports': 'off',
     'no-useless-constructor': 'off',
     'no-redeclare': 'off',
-    'dot-notation': 'off'
+    'dot-notation': 'off',
+
+    // 启用新规则
+    '@typescript-eslint/no-empty-object-type': 'error',
+    '@typescript-eslint/no-unsafe-function-type': 'error',
+    '@typescript-eslint/no-wrapper-object-types': 'error',
+    '@typescript-eslint/no-restricted-types': 'error',
+    '@stylistic/ts/func-call-spacing': 'error',
+    '@stylistic/ts/member-delimiter-style': [
+      'error',
+      {
+        multiline: {
+          delimiter: 'semi',
+          requireLast: true
+        },
+        singleline: {
+          delimiter: 'comma',
+          requireLast: false
+        }
+      }
+    ],
+    '@stylistic/ts/semi': 'error',
+    '@stylistic/ts/type-annotation-spacing': 'error',
+    '@stylistic/ts/quotes': [
+      'error',
+      'single',
+      { avoidEscape: true }
+    ],
+    'import/no-duplicates': 'error'
   }
 };

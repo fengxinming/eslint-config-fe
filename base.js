@@ -2,7 +2,8 @@ module.exports = {
   extends: [
     './rules/base',
     './rules/base-babel'
-  ].map(require.resolve),
+  ].map(require.resolve)
+    .concat('plugin:import/recommended'),
   parser: '@babel/eslint-parser',
   parserOptions: {
     sourceType: 'module',
@@ -17,7 +18,8 @@ module.exports = {
     }
   },
   plugins: [
-    '@babel'
+    '@babel',
+    'import'
   ],
   env: {
     browser: true,
