@@ -10,7 +10,7 @@
 ## Installation
 
 ```bash
-npm install --save-dev eslint@8 eslint-config-fe @babel/core@7 @babel/eslint-parser@7 @babel/eslint-plugin@7 @babel/preset-env@7
+npm install --save-dev eslint@8.57.1 eslint-config-fe eslint-plugin-import @babel/core@7 @babel/eslint-parser@7 @babel/eslint-plugin@7 @babel/preset-env@7
 ```
 
 ## Usage

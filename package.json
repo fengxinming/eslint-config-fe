@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-fe",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "ESLint config for Front End.",
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,6 @@
   "dependencies": {
     "@eslint/config-helpers": "^0.7.0",
     "@eslint/eslintrc": "^2.1.4",
-    "eslint-plugin-import": "^2.32.0",
     "lodash": "^4.17.21"
   },
   "peerDependencies": {
@@ -25,6 +24,7 @@
     "@typescript-eslint/eslint-plugin": "^8.71.1",
     "@typescript-eslint/parser": "^8.71.1",
     "eslint": "^8.57.0",
+    "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.1.1"
   },
@@ -44,7 +44,8 @@
     "@babel/eslint-parser": "^7.29.9",
     "@babel/eslint-plugin": "^7.29.7",
     "@babel/preset-env": "^7.29.7",
-    "eslint": "^8.57.0"
+    "eslint": "^8.57.0",
+    "eslint-plugin-import": "^2.32.0"
   },
   "engines": {
     "node": "^20.19.0 || ^22.13.0 || >=24"
